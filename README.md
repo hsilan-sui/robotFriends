@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+<!-- # 功能 -->
+<!-- # 畫面 -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- # 安裝 / Installation
+
+## 安裝專案 -->git
 
 ## Available Scripts
 
