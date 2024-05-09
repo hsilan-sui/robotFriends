@@ -1,6 +1,7 @@
 import React from "react";
 import CardList from "./CardList";
 import SearchBox from "./SearchBox";
+import "./App.css";
 import { robots } from "./robots";
 
 //在one way data flow情況下，要如何讓子元件彼此響應當前“狀態”進行互動？＝> state /memory > props
