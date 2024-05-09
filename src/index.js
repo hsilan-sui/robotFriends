@@ -3,7 +3,7 @@ import React from "react"; //React套件 view library
 //react可以不限於使用在apps還有mobile以及vr等等 所以會需要分開載入上述兩個套件原因，而react-dom/client適用於Dom web
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import App from "./containers/App";
 import "tachyons";
 import reportWebVitals from "./reportWebVitals";
 
