@@ -3,13 +3,34 @@ import React from "react"; //React套件 view library
 //react可以不限於使用在apps還有mobile以及vr等等 所以會需要分開載入上述兩個套件原因，而react-dom/client適用於Dom web
 import ReactDOM from "react-dom";
 import "./index.css";
-import Hello from "./Hello";
+import Card from "./Card";
 // import App from "./App";
+import "tachyons";
+import { robots } from "./robots";
 import reportWebVitals from "./reportWebVitals";
 
 //ReactDOM.render(): 這是 React DOM 提供的一個方法，它用來將 React 元素渲染到 DOM 中。這個方法需要兩個參數：第一個參數是要渲染的 React 元素，第二個參數是指定渲染目標的 DOM 元素
 ReactDOM.render(
-  <Hello greeting="hello, jsjs!!" name="reactreact" />,
+  <div>
+    <Card
+      id={robots[0].id}
+      name={robots[0].name}
+      username={robots[0].username}
+      email={robots[0].email}
+    />
+    <Card
+      id={robots[1].id}
+      name={robots[1].name}
+      username={robots[1].username}
+      email={robots[1].email}
+    />
+    <Card
+      id={robots[2].id}
+      name={robots[2].name}
+      username={robots[2].username}
+      email={robots[2].email}
+    />
+  </div>,
   document.getElementById("root")
 );
 
