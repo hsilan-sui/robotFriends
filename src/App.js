@@ -1,8 +1,9 @@
 import React from "react";
 import CardList from "./CardList";
 import SearchBox from "./SearchBox";
+import Scroll from "./Scroll";
 import "./App.css";
-import { robots } from "./robots";
+// import { robots } from "./robots";
 
 //在one way data flow情況下，要如何讓子元件彼此響應當前“狀態”進行互動？＝> state /memory > props
 //class component寫法
@@ -12,11 +13,16 @@ class App extends React.Component {
     super(); //js 子类拥有自己的构造函数 在子类的构造函数中需要使用 super() 来调用父类的构造函数(這裡是調用React.Component)
     //設置state
     this.state = {
-      robots: robots,
+      robots: [],
       searchfield: "",
     };
   }
 
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((users) => this.setState({ robots: users }));
+  }
   //
   onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value });
@@ -37,11 +43,16 @@ class App extends React.Component {
         .toLowerCase()
         .includes(this.state.searchfield.toLowerCase());
     });
-    return (
+    //判斷
+    return !this.state.robots.length ? (
+      <h1>Loading</h1>
+    ) : (
       <div className="tc">
         <h1>Hello RobotFriends</h1>
         <SearchBox searchChange={this.onSearchChange} />
-        <CardList robots={filteredRobotsArr} />
+        <Scroll>
+          <CardList robots={filteredRobotsArr} />
+        </Scroll>
       </div>
     );
   }
