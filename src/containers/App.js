@@ -37,14 +37,13 @@ class App extends React.Component {
   };
 
   render() {
+    const { robots, searchfield } = this.state;
     //想讓searchinput的值和robots的資料做互動=>filter 並在渲染頁面時assign進來
-    const filteredRobotsArr = this.state.robots.filter((robot) => {
-      return robot.name
-        .toLowerCase()
-        .includes(this.state.searchfield.toLowerCase());
+    const filteredRobotsArr = robots.filter((robot) => {
+      return robot.name.toLowerCase().includes(searchfield.toLowerCase());
     });
     //判斷
-    return !this.state.robots.length ? (
+    return !robots.length ? (
       <h1>Loading</h1>
     ) : (
       <div className="tc">
