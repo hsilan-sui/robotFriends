@@ -8,15 +8,14 @@ import "tachyons";
 import reportWebVitals from "./reportWebVitals";
 
 //ReactDOM.render(): 這是 React DOM 提供的一個方法，它用來將 React 元素渲染到 DOM 中。這個方法需要兩個參數：第一個參數是要渲染的 React 元素，第二個參數是指定渲染目標的 DOM 元素
-ReactDOM.render(<App />, document.getElementById("root"));
+//ReactDOM.render(<App />, document.getElementById("root"));
 
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(
-//   <React.StrictMode>
-//     <h1>HELLLLLLLO</h1>
-//     <App />
-//   </React.StrictMode>
-// );
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
